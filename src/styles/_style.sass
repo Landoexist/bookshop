@@ -1,0 +1,246 @@
+@import ./_mixins
+@import ./_mobile
+
+*
+    margin: 0
+    padding: 0
+
+.container
+    max-width: 1440px
+    margin: 0 auto
+.header
+    position: sticky
+    top: 0
+    background: #FFFFFF
+    z-index: 2
+.link
+    text-decoration: none
+.header__container
+    display: flex
+    padding: 27px 5% 40px
+    justify-content: space-between
+    align-items: center
+    .header-logo a
+        @include text-decoration(Montserrat, 700, 24,#1C2A39)
+
+    .header-navigation-list
+        list-style-type: none
+        display: flex
+        .header-navigation__item
+            a
+                @include text-decoration(Montserrat, 700, 10,#5C6A79)
+                text-transform: uppercase
+            &_active a
+                @include text-decoration(Montserrat, 700, 10,#1C2A39)
+            &:not(:last-child)
+                margin-right: 40px
+    .header-menu
+        display: flex
+        .header-menu-item
+            cursor: pointer
+            padding-top: 20px
+            &:not(:first-child)
+                margin-left: 40px
+            .cart-items-counter
+                @include text-decoration(Montserrat, 500, 10, #FFFFFF)
+                width: 13px
+                height: 13px
+                background-color: none
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                position: relative
+                bottom: 11px
+                left: 6px
+
+.slider__container
+    padding: 0 5%
+    .slider-section
+        max-width: 100%
+        overflow: hidden
+        -webkit-box-shadow: 0px 8px 30px -6px rgba(34, 60, 80, 0.2)
+        -moz-box-shadow: 0px 8px 30px -6px rgba(34, 60, 80, 0.2)
+        box-shadow: 0px 8px 30px -6px rgba(34, 60, 80, 0.2)
+        .banner
+            position: absolute
+            text-transform: uppercase
+            z-index: 1
+            cursor: pointer
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            a
+                @include text-decoration(Montserrat,700, 18, #1C2A39)
+        .banner1
+            background: #9E98DC
+            width: 120px
+            height: 170px
+            padding: 10px
+        .banner2
+            background: #FF8FE6
+            width: 100px
+            height: 240px
+            top: 550px
+            padding: 10px
+        .slider-line
+            display: flex
+            transition: all ease .5s
+    .slider-manipulate
+        padding-top: 17px
+        display: flex
+        justify-content: center
+        .slider__circle
+            width: 12px
+            height: 12px
+            background: #EFEEF6
+            border-radius: 50%
+            border: none
+            cursor: pointer
+            transition: all .5s
+            &:nth-child(2)
+                margin: 0 10px
+            &_active
+                background: #9E98DC
+
+.wrapper
+    display: flex
+    max-width: 1440px
+    margin: 0 auto
+    .categories-section
+        background-color: #EFEEF6
+        padding: 45px 10% 45px 5%
+        height: 750px
+        .categories-list
+            list-style: none
+            width: 118px
+            .categories-list__item
+                @include text-decoration(Montserrat, 500, 12, #5C6A79)
+                cursor: pointer
+                margin-bottom: 23px
+                white-space: nowrap
+                transition: all .25s
+                &_active
+                    @include text-decoration(Montserrat, 700, 16, #1C2A39)
+                    list-style: disc
+                    &::marker
+                        color: #756AD3
+    .books
+        display: grid
+        padding-top: 45px
+        margin-left: -50px
+        grid-template-columns: 1fr 1fr
+        gap: 50px 70px
+        .book-card
+            display: grid
+            grid-template-columns: 40% 40%
+            column-gap: 5%
+            .book-image
+                img
+                    height: auto
+                    width: 100%
+                    -webkit-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                    -moz-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                    box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+
+            .book-info
+                margin: auto
+                .book-author
+                    @include text-decoration('Open Sans',400,10 , #5C6A79)
+                .book-title
+                    @include text-decoration(Montserrat, 700,16,#1C2A39 )
+                    margin: 4px 0 5px
+                    overflow-wrap: anywhere
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    display: -webkit-box
+                    -webkit-box-orient: vertical
+                    -webkit-line-clamp: 4
+                .book-rating
+                    display: flex
+                    .book-rating__stars
+                        --percent: calc(var(--rating) * 20%)
+                        /* background: linear-gradient(0.25turn, #F2C94C 0 60%,#EEEDF5 60% 100%) */
+                        background: linear-gradient(90deg, #F2C94C 0 var(--percent), #EEEDF5 var(--percent) 100%)
+
+                        /* background-clip: text */
+                        -webkit-background-clip: text
+                        -webkit-text-fill-color: transparent
+                        font-size: 14px
+                        line-height: 14px
+                    .book-rating__reviews
+                        @include text-decoration('Open Sans',400,10, #5C6A79)
+                        margin-left: 10px
+
+                .book-description
+                    @include text-decoration('Open Sans', 400, 10,#5C6A79)
+                    margin: 16px 0
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    display: -webkit-box
+                    -webkit-box-orient: vertical
+                    -webkit-line-clamp: 3
+
+                .book-price
+                    @include text-decoration(Montserrat,700,13 , #1C2A39)
+                    padding-bottom: 16px
+
+.button
+    padding: 17px 40px
+    background: none
+    text-transform: uppercase
+    border: 1px solid #4C3DB2
+    @include text-decoration(Montserrat, 700, 8, #4C3DB2)
+    cursor: pointer
+
+
+.buy__button
+    width: 100%
+    transition: all .3s
+.buy__button_disabled
+    color: #5C6A79
+    border-color: #EEEDF5
+    cursor: not-allowed
+    
+.buy__button_pressed
+    color: #5C6A79
+    border-color: #EEEDF5
+    
+
+.load-more__button
+    display: block
+    margin: 50px auto
+
+.loader
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    border-top: 4px solid #4C3DB2
+    border-right: 4px solid transparent
+    box-sizing: border-box
+    animation: rotation .75s linear infinite
+    margin: 50px auto
+    display: none
+    position: sticky
+    top: 150px
+
+.loader::after
+    content: ''
+    box-sizing: border-box
+    position: absolute
+    left: 0
+    top: 0
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    border-bottom: 4px solid #1C2A39
+    border-left: 4px solid transparent
+
+@keyframes rotation
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
+
+.books-section
+    width: 100%

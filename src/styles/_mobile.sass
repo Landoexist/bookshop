@@ -1,0 +1,133 @@
+@media screen and (max-width: 1100px)
+    body
+        .header__container
+            padding: 10px 5% 23px
+        .wrapper
+            .categories-section
+                .categories-list
+                    .categories-list__item
+                        &_active
+                            &::marker
+                                color: #756AD3
+            .books
+                gap: 20px 40px
+                .book-card
+                    .book-image
+                        img
+                            -webkit-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                            -moz-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                            box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+
+                    .book-info
+                        .book-author
+                            @include text-decoration('Open Sans',400,10 , #5C6A79)
+                        .book-title
+                            font-size: 14px
+                            margin: 2px 0 3px
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            display: -webkit-box
+                            -webkit-box-orient: vertical
+                            -webkit-line-clamp: 3
+                        .book-description
+                            font-size: 8px
+                            margin: 6px 0
+                            -webkit-line-clamp: 3
+                        .book-price
+                            font-size: 10px
+                            padding-bottom: 6px
+            .categories-section
+                height: 500px
+                .categories-list
+                    list-style: none
+                    width: 118px
+                    .categories-list__item
+                        margin-bottom: 19px
+                        font-size: 10px
+                        &_active
+                            font-size: 14px
+        .button
+            font-size: 6px
+            padding: 12px 30px
+        .slider__container
+            .slider-section
+                .banner
+                    a
+                        font-size: 14px
+                .banner1
+                    width: 80px
+                    height: 110px
+                    padding: 10px
+                .banner2
+                    width: 60px
+                    height: 180px
+                    padding: 10px
+
+@media screen and (max-width: 767px)
+    body
+        .header__container
+            padding: 7px 5% 11px
+        .header-navigation
+            display: none
+        .wrapper
+            .books
+                grid-template-columns: 1fr
+                .book-card
+                    .book-image
+                        img
+                            -webkit-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                            -moz-box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+                            box-shadow: 0px 53px 19px -32px rgba(34, 60, 80, 0.09)
+
+                    .book-info
+                        .book-author
+                            font-size: 14px
+                        .book-title
+                            font-size: 18px
+                            margin: 2px 0 3px
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            display: -webkit-box
+                            -webkit-box-orient: vertical
+                            -webkit-line-clamp: 3
+                        .book-rating
+                            .book-rating__stars
+                                font-size: 16px
+                                line-height: 14px
+                            .book-rating__reviews
+                                font-size: 12px
+                        .book-description
+                            font-size: 14px
+                            margin: 6px 0
+                            -webkit-line-clamp: 2
+                        .book-price
+                            font-size: 14px
+                            padding-bottom: 10px
+            .categories-section
+                height: 500px
+                .categories-list
+                    .categories-list__item
+                        font-size: 12px
+                        &_active
+                            font-size: 14px
+                            &::marker
+                                color: #756AD3
+            .books
+                gap: 20px 40px
+                margin-left: -20px
+        .button
+            font-size: 12px
+            padding: 10px 0
+        .slider__container
+            .slider-section
+                .banner
+                    a
+                        font-size: 10px
+                .banner1
+                    width: 80px
+                    height: 80px
+                    padding: 7px
+                .banner2
+                    width: 60px
+                    height: 150px
+                    padding: 7px
